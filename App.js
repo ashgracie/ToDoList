@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import AuthPage from './pages/AuthPage/AuthPage';
 import NewOrderPage from './pages/NewOrderPage/NewOrderPage';
 import OrderHistoryPage from './pages/OrderHistoryPage/OrderHistoryPage';
-import FruitsPage from './pages/FruitsPage/FruitsPage';
+import TodosPage from './TodosPage/TodosPage';
 import NavBar from './components/NavBar/NavBar';
 import { Routes, Route} from 'react-router-dom'
 
@@ -28,18 +28,12 @@ function App() {
   return (
     <main className="App">
       {
-        user ?
-        <>
-          <NavBar />
           <Routes>
-            <Route path="/fruits" element={<FruitsPage />} />
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage/>} />
-          </Routes>
-        </>
-         :
-        <AuthPage/>
-      }
+          <Route path="/todoListItems" element={<TodosPage />} />
+          <Route path="/orders/new" element={<NewOrderPage />} />
+          <Route path="/orders" element={<OrderHistoryPage/>} />
+        </Routes>
+    }
     </main>
   );
 }
